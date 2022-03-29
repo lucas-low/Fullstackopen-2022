@@ -1,0 +1,38 @@
+note over browser:
+User write text field and click submit button 
+end note
+
+note over browser:
+browser send user input as data to the server 
+as the body of the POST-request
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over server:
+server access the data via req.body field
+of the request object req. then the server 
+creates a new note object withnote (content)
+and the timestamp (date) and adds it to 
+an array called notes
+end note
+
+server-->browser: HTM status code 302 redirectrs to https://studies.cs.helsinki.fi/exampleapp/notes 
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: html code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+that requests JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "new note json, date: "2022-03-28" }, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note

@@ -1,0 +1,26 @@
+note over browser:
+User write text field and 
+click submit button 
+end note
+
+note over browser:
+spa.js fetch the form-element 
+and register event handler to 
+handle form submit event: 
+prevents default handling,
+reate new note run redrawNotes
+then send as JSON with both 
+the content and date to server 
+in request body
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+note over server:
+server access the data via 
+req.body field of the 
+request object req. then 
+adds to arraythen sends 
+JSON to browser
+end note
+server-->browser: HTML status code 201 created
+server-->browser: {"message":"note created"}
