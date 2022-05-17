@@ -26,8 +26,13 @@ const App = () => {
 
   const random = () => Math.floor(Math.random() * (anecdotes.length));
   const handleNext = () => setSelected(random);
+<<<<<<< HEAD
   console.log (selected)
   console.log (votes)
+=======
+  console.log ('selected value is', selected)
+  console.log ('votes value is', votes)
+>>>>>>> d1f741d8 (commit Part 2)
 
   return (
     <div>
