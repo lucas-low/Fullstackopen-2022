@@ -3,13 +3,11 @@ My submission:-
 
 Parts 0-5 (core course) - Full Stack Web Development (5 cr, CSM141081)
 - [x] Part 0: Fundamentals of Web apps
-<<<<<<< HEAD
 - [x] Part 1: Introduction to React 
 - [x] Part 2: Communicating with server
-=======
-- [ ] Part 1: Introduction to React 
-- [ ] Part 2: Communicating with server
->>>>>>> d1f741d8 (commit Part 2)
+
+URL: https://pure-waters-74677.herokuapp.com
+
 - [ ] Part 3: Programming a server with NodeJS and Express
 - [ ] Part 4: Testing Express servers, user administration
 - [ ] Part 5: Testing React apps

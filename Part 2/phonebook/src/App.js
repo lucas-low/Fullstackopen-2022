@@ -28,27 +28,39 @@ const App = () => {
     };
   }, [message]);
 
+  // creates new contact 
   const addPerson = (event) => {
     event.preventDefault();
     const currentName = persons.filter(
       (person) => person.name === newPerson.name
     );
-
+    // create new contact
     if (currentName.length === 0) {
       personService
         .create(newPerson)
         .then((returnedPerson) => {
           setPersons(persons.concat(returnedPerson));
+
           setPersonsToShow(persons.concat(returnedPerson));
-          setMessage(`Added ${newPerson.name} to phonebook`);
+          setMessage(`Added ${newPerson.name}`);
+        
+          setTimeout(() => {
+            setMessage(null)
+          }, 5000)
+          setNewPerson('')
         })
-        .catch((error) => setMessage(error.response.data.error));
+        .catch(error => 
+        // this is the way to access the error message
+        setMessage(`${error.response.data.error}`)
+        )
+              
     } else {
       if (
         window.confirm(
           `${newPerson.name} is already added to phonebook, replace the old number with a new one?`
         )
       ) {
+        //update contact
         personService
           .update(currentName[0].id, newPerson)
           .then((returnedPerson) => {
@@ -75,6 +87,7 @@ const App = () => {
       });
     }
   };
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;

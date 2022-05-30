@@ -1,0 +1,11 @@
+### GET Request
+GET http://localhost:3001/api/persons
+Content-Type: application/json
+
+### GET Request
+GET http://localhost:3001/api/info
+Content-Type: application/json
+
+### GET Request
+GET http://localhost:3001/api/persons/2
+Content-Type: application/json

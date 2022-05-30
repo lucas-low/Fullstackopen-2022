@@ -1,5 +1,8 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3001/persons'
+//local test
+//const baseUrl = 'http://localhost:3001/api/persons'
+//relative url for heroku deploy
+const baseUrl = '/api/persons'
 
 const getAll = () => {
     const request = axios.get(baseUrl)
