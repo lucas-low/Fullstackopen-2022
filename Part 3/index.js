@@ -111,15 +111,9 @@ Person.findByIdAndUpdate
     .then(updatedPerson => {
       if (updatedPerson) {
         response.json(updatedPerson.toJSON)
-//      } else {
-//          response.status(404).end()
   }}
 )
    .catch(error => 
-//    console.error(error.message)
-//    if (error.name === 'CastError') {
-//      next(new ErrorHandler(400, ["Malformatted Id"]));
-//    } 
     next(error)
 )})
 

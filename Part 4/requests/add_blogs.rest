@@ -1,0 +1,14 @@
+### POST Request
+POST http://localhost:3003/api/blogs/
+Content-Type: application/json
+
+{
+    "title":"The BlogFolio",
+    "author":"Lucas Low",
+    "url":"www.lucaslow.com",
+    "likes":9
+}
+
+
+
+

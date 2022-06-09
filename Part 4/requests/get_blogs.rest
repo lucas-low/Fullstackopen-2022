@@ -1,0 +1,11 @@
+### GET Request
+GET http://localhost:3003/api/blogs
+
+{
+    "_id": "123456789",
+    "title": "The BlogsBlog",
+    "author": "The Blogger",
+    "url": "www.bloggersblogerblog.com",
+    "likes": 999,
+    "_v": "0"
+}
