@@ -1,5 +1,5 @@
 
-# [Full Stack Open 2021](https://fullstackopen.com/en/ "Full Stack Open 2021 Homepage")
+# [Full Stack Open 2022](https://fullstackopen.com/en/ "Full Stack Open 2022 Homepage")
 
 Full Stack Web Development with modern Javascript by University of Helsinki. 
 
