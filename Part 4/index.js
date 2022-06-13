@@ -1,5 +1,5 @@
 //launch the application at port with Node http object
-const app = require('./app') // the actual Express app
+const app = require('./app')
 const http = require('http')
 const config = require('./utils/config')
 const logger = require('./utils/logger')

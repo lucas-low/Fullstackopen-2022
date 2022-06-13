@@ -1,15 +1,55 @@
-const dummy = (blogs) => {
-    return 1
-    // ...
-}
-//If the length of the array is 0 then we return 0, all other cases uses reduce method 
+const _ = require('lodash')
+const dummy = (blogs) => 1
+
 const totalLikes = (blogs) => {
-    return blogs.length === 0
-    ? 0
-    : blogs.reduce((sum, item) => sum + item.likes, 0)
+  if ( blogs.length === 0) {
+    return 0
+  }
+  
+  return blogs.reduce((sum, b) => sum + b.likes,0)
+}
+
+const favoriteBlogs = (blogs) => {
+  if ( blogs.length === 0) {
+    return undefined
+  }
+
+  return blogs.sort((a, b) => b.likes - a.likes )[0]
+}
+
+const mostBlogs = (blogs) => {
+  if ( blogs.length === 0) {
+    return undefined
+  }
+
+  const byAuthor = _.groupBy(blogs, (b) => b.author)
+  const likeCounts = Object.keys(byAuthor).map(name => {
+    return {
+      name,
+      blogs: byAuthor[name].length
+    }
+  })
+
+  return likeCounts.sort((a, b) => b.blogs - a.blogs )[0].name
+}
+
+const mostLikes = (blogs) => {
+  if ( blogs.length === 0) {
+    return undefined
+  }
+
+  const byAuthor = _.groupBy(blogs, (b) => b.author)
+  const likeCounts = Object.keys(byAuthor).map(name => {
+    return {
+      name,
+      likes: byAuthor[name].reduce((s, b) => s + b.likes, 0)
+    }
+  })
+
+
+  return likeCounts.sort((a, b) => b.likes - a.likes )[0].name
 }
 
 module.exports = {
-    dummy,
-    totalLikes,
+  dummy, totalLikes, favoriteBlogs, mostBlogs, mostLikes
 }
